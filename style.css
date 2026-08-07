@@ -89,6 +89,12 @@ button{font:inherit}
     background:#ffffff;
     box-shadow:var(--shadow);
 }
+.bcie-logo{
+    width:280px;
+    max-width:75%;
+    height:auto;
+    object-fit:contain;
+}
 .bcie-mark{display:grid;place-items:center;width:150px;height:150px;border-radius:38px;background:var(--green);color:#fff;font-family:"Space Grotesk";font-size:2rem;font-weight:700}
 .role-copy p{color:var(--muted);font-size:1.08rem;line-height:1.8}
 
