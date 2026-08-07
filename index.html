@@ -204,61 +204,70 @@
 
   <script src="script.js"></script>
 </body>
-<div class="password-card">
+<body>
 
-    <div class="password-brand">
+  <div class="password-gate" id="passwordGate">
+
+    <div class="password-card">
+
+      <div class="password-brand">
         TRANSFORMEMOS JUNTOS
-    </div>
+      </div>
 
-    <div class="proposal-label">
+      <div class="proposal-label">
         Concept Proposal
-    </div>
+      </div>
 
-    <h2>Acceso privado</h2>
+      <h2>Acceso privado</h2>
 
-    <p class="prepared-for">
+      <p class="prepared-for">
         Prepared exclusively for
-    </p>
+      </p>
 
-    <img
+      <img
         src="./images/logo-bcie-transparencia-hfes.png"
         alt="BCIE"
         class="password-logo">
 
-    <form id="passwordForm">
+      <form id="passwordForm">
 
         <div class="password-field">
 
-            <input
-                type="password"
-                id="passwordInput"
-                placeholder="Password"
-                autocomplete="current-password"
-                required>
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="Password"
+            autocomplete="current-password"
+            required>
 
         </div>
 
         <div
-            class="password-error"
-            id="passwordError">
+          class="password-error"
+          id="passwordError">
 
-            Incorrect password.
+          Incorrect password.
 
         </div>
 
         <button
-            type="submit"
-            class="password-button">
+          type="submit"
+          class="password-button">
 
-            Enter Proposal
+          Enter Proposal
 
         </button>
 
-    </form>
+      </form>
 
-    <div class="password-footer">
+      <div class="password-footer">
         transformemos.bcie.org
+      </div>
+
     </div>
 
-</div>
+  </div>
+
+
+  <header class="hero" id="inicio">
 </html>
