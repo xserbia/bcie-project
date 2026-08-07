@@ -1,3 +1,90 @@
+/* =========================
+   PASSWORD ACCESS
+   ========================= */
+
+const PASSWORD = "BCIE2026";
+
+const passwordGate = document.getElementById("passwordGate");
+const passwordForm = document.getElementById("passwordForm");
+const passwordInput = document.getElementById("passwordInput");
+const passwordError = document.getElementById("passwordError");
+
+const alreadyUnlocked =
+  sessionStorage.getItem("transformemosUnlocked") === "true";
+
+
+function unlockPresentation(){
+
+  sessionStorage.setItem(
+    "transformemosUnlocked",
+    "true"
+  );
+
+  passwordGate.classList.add("unlocked");
+
+  document.body.classList.remove("locked");
+
+  setTimeout(() => {
+    passwordGate.style.display = "none";
+  }, 500);
+}
+
+
+if(alreadyUnlocked){
+
+  passwordGate.style.display = "none";
+
+}else{
+
+  document.body.classList.add("locked");
+
+  setTimeout(() => {
+    passwordInput.focus();
+  },300);
+
+}
+
+
+passwordForm.addEventListener(
+  "submit",
+  function(event){
+
+    event.preventDefault();
+
+    const enteredPassword =
+      passwordInput.value.trim();
+
+
+    if(enteredPassword === PASSWORD){
+
+      passwordError.classList.remove("show");
+
+      unlockPresentation();
+
+    }else{
+
+      passwordError.classList.add("show");
+
+      passwordInput.value = "";
+
+      passwordInput.focus();
+
+      passwordInput.animate(
+        [
+          {transform:"translateX(0)"},
+          {transform:"translateX(-6px)"},
+          {transform:"translateX(6px)"},
+          {transform:"translateX(-4px)"},
+          {transform:"translateX(4px)"},
+          {transform:"translateX(0)"}
+        ],
+        {
+          duration:320
+        }
+      );
+    }
+  }
+);
 document.addEventListener("DOMContentLoaded", () => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
