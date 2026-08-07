@@ -1,86 +1,70 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ==========================
-     PASSWORD ACCESS
-     ========================== */
+/* ==========================
+   PASSWORD ACCESS
+   ========================== */
 
-  const PASSWORD = "BCIE2026";
+const PASSWORD = "BCIE2026";
 
-  const passwordGate = document.getElementById("passwordGate");
-  const passwordForm = document.getElementById("passwordForm");
-  const passwordInput = document.getElementById("passwordInput");
-  const passwordError = document.getElementById("passwordError");
+const passwordGate = document.getElementById("passwordGate");
+const passwordForm = document.getElementById("passwordForm");
+const passwordInput = document.getElementById("passwordInput");
+const passwordError = document.getElementById("passwordError");
 
-  function unlockPresentation() {
+function unlockPresentation() {
 
-    sessionStorage.setItem(
-      "transformemosUnlocked",
-      "true"
-    );
+  document.body.classList.remove("locked");
 
-    document.body.classList.remove("locked");
+  if (passwordGate) {
 
-    if (passwordGate) {
-      passwordGate.classList.add("unlocked");
+    passwordGate.classList.add("unlocked");
 
-      setTimeout(() => {
-        passwordGate.style.display = "none";
-      }, 500);
-    }
+    setTimeout(() => {
+      passwordGate.style.display = "none";
+    }, 500);
+
   }
 
-  if (passwordGate && passwordForm && passwordInput) {
+}
 
-    const alreadyUnlocked =
-      sessionStorage.getItem("transformemosUnlocked") === "true";
+if (passwordGate && passwordForm && passwordInput) {
 
-    if (alreadyUnlocked) {
+  // Siempre mostrar el modal
+  document.body.classList.add("locked");
 
-      passwordGate.style.display = "none";
-      document.body.classList.remove("locked");
+  setTimeout(() => {
+    passwordInput.focus();
+  }, 300);
+
+  passwordForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const enteredPassword =
+      passwordInput.value.trim();
+
+    if (enteredPassword === PASSWORD) {
+
+      if (passwordError) {
+        passwordError.classList.remove("show");
+      }
+
+      unlockPresentation();
 
     } else {
 
-      document.body.classList.add("locked");
+      if (passwordError) {
+        passwordError.classList.add("show");
+      }
 
-      setTimeout(() => {
-        passwordInput.focus();
-      }, 300);
+      passwordInput.value = "";
+      passwordInput.focus();
 
     }
 
-    passwordForm.addEventListener("submit", (event) => {
+  });
 
-      event.preventDefault();
-
-      const enteredPassword =
-        passwordInput.value.trim();
-
-      console.log("Password submitted");
-
-      if (enteredPassword === PASSWORD) {
-
-        if (passwordError) {
-          passwordError.classList.remove("show");
-        }
-
-        unlockPresentation();
-
-      } else {
-
-        if (passwordError) {
-          passwordError.classList.add("show");
-        }
-
-        passwordInput.value = "";
-        passwordInput.focus();
-
-      }
-
-    });
-
-  }
-
+}
 
   /* ==========================
      SITE NAVIGATION
