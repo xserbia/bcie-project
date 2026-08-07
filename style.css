@@ -332,3 +332,49 @@ body.locked{
     font-size:1.9rem;
   }
 }
+.proposal-label{
+
+    margin-top:18px;
+    margin-bottom:42px;
+
+    color:rgba(255,255,255,.55);
+
+    font-size:.82rem;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+}
+
+.prepared-for{
+
+    margin-bottom:22px;
+
+    text-align:center;
+
+    color:rgba(255,255,255,.55);
+
+    font-size:.9rem;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.password-logo{
+
+    display:block;
+
+    width:220px;
+
+    max-width:75%;
+
+    margin:0 auto 38px;
+
+    height:auto;
+
+    filter:brightness(0) invert(1);
+
+}
