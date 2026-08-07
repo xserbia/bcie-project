@@ -79,7 +79,16 @@ button{font:inherit}
 
 .role-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:center}
 .role-visual{min-height:440px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
-.bcie-visual{display:grid;place-items:center;background:linear-gradient(145deg,var(--blue),var(--blue-2))}
+.bcie-visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:440px;
+    padding:60px;
+    border-radius:28px;
+    background:#ffffff;
+    box-shadow:var(--shadow);
+}
 .bcie-mark{display:grid;place-items:center;width:150px;height:150px;border-radius:38px;background:var(--green);color:#fff;font-family:"Space Grotesk";font-size:2rem;font-weight:700}
 .role-copy p{color:var(--muted);font-size:1.08rem;line-height:1.8}
 
