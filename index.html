@@ -204,4 +204,40 @@
 
   <script src="script.js"></script>
 </body>
+  <div class="password-gate" id="passwordGate">
+  <div class="password-card">
+    <div class="password-brand">TRANSFORMEMOS JUNTOS</div>
+
+    <h2>Acceso a la propuesta</h2>
+
+    <p>
+      Esta presentación contiene una propuesta conceptual
+      preparada para BCIE.
+    </p>
+
+    <form id="passwordForm">
+      <div class="password-field">
+        <input
+          type="password"
+          id="passwordInput"
+          placeholder="Contraseña"
+          autocomplete="current-password"
+          required
+        >
+      </div>
+
+      <div class="password-error" id="passwordError">
+        Contraseña incorrecta. Inténtalo nuevamente.
+      </div>
+
+      <button type="submit" class="password-button">
+        Acceder
+      </button>
+    </form>
+
+    <div class="password-footer">
+      transformemos.bcie.org
+    </div>
+  </div>
+</div>
 </html>
